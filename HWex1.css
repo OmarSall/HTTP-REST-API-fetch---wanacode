@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.user {
+  margin-bottom: 1em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.todos {
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+.loading {
+  color: gray;
+  font-style: italic;
+}
