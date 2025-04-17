@@ -51,26 +51,26 @@ function renderCompanyTable(companies, companyMap) {
     const tableBody = document.createElement("tbody");
 
     companies.forEach(company => {
-        const tableRow = document.createElement("tr");
-        const companyId = company.uri.toString().split("/").pop();
-        tableRow.innerHTML = `
+    const tableRow = document.createElement("tr");
+    const companyId = company.uri.toString().split("/").pop();
+    tableRow.innerHTML = `
         <td>${company.name || "Unknown"}</td>
         <td>${company.userCount}</td>
         <td>
         <button class="btn btn-primary btn-sm" data-company="${companyId}">Show Users</button>
         </td>
-        `;
-        tableBody.appendChild(tableRow);
+    `;
+    tableBody.appendChild(tableRow);
 
-        // Hidden row for users
-        const usersRow = document.createElement("tr");
-        usersRow.classList.add("d-none");
-        usersRow.id = `users-row-${companyId}`;
-        const usersCell = document.createElement("td");
-        usersCell.colSpan = 3;
-        usersCell.innerHTML = createUserList(companyMap[companyId] || []);
-        usersRow.appendChild(usersCell);
-        tableBody.append(usersRow);
+    // Hidden row for users
+    const usersRow = document.createElement("tr");
+    usersRow.classList.add("d-none");
+    usersRow.id = `users-row-${companyId}`;
+    const usersCell = document.createElement("td");
+    usersCell.colSpan = 3;
+    usersCell.innerHTML = createUserList(companyMap[companyId] || []);
+    usersRow.appendChild(usersCell);
+    tableBody.append(usersRow);
     });
 
     table.appendChild(tableBody);
