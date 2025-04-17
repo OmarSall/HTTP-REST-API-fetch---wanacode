@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'http://localhost:3000/articles';
 const articlesList = document.getElementById('articles-list');
 const articleForm = document.getElementById('article-form');
 const titleInput = document.getElementById('title');
